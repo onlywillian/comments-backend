@@ -20,6 +20,6 @@ const CommentSchema = new db.Schema({
     }
 });
 
-const comment = new db.model("comment", CommentSchema);
+const Comment = new db.model("comment", CommentSchema);
 
-module.exports = comment;
+module.exports = Comment;
