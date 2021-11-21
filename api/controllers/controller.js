@@ -1,10 +1,7 @@
-const axios = require('axios').default;
+const Model = require('../../models/model');
 
-module.exports = () => {
-    const data = axios.get("localhost:3001/api/v1/comments")
-        .then(response => {
-            response.json();
-        });
+module.exports = async () => {
+    const data = await Model.find();
 
     return data;
 };
