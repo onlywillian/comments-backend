@@ -1,6 +1,6 @@
 const db = require("../database/db");
 
-const CommentSchema = new db.default.Schema({
+const CommentSchema = new db.Schema({
     title: {
         type: String,
         required: true
@@ -20,6 +20,6 @@ const CommentSchema = new db.default.Schema({
     }
 });
 
-const comment = new db.default.model("comment", CommentSchema);
+const comment = new db.model("comment", CommentSchema);
 
-export default comment;
+module.exports = comment;
