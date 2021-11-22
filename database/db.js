@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/comments", () => {
+const dotenv = require('dotenv').config();
+
+mongoose.connect(process.env.DATABASE_URL, () => {
     console.log("Conectou!");
 });
 
