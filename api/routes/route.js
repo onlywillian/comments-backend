@@ -9,11 +9,12 @@ module.exports = app => {
             res.send({ data: data }).status(200);
         })
         .post((req, res) => {
+            console.log(req.body);
             const comment = new Comment(req.body);
             comment.save(err => {
-                if (err) return res.send({ error: "save error" })
+                if (err) return res.send({ error: err });
 
                 res.send({ success: comment }).status(200);
-            })
-        })
+            });
+        });
 }
